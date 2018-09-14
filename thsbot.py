@@ -7,7 +7,7 @@ bot = commands.Bot(command_prefix='?', description=description)
 replat_f = open("randot/replat.txt", "r")
 replat = replat_f.readlines()
 wrprompit_f = open("randot/wrpromt.txt", "r")
-wrprompit = list(filter(None, wrprompit_f.readlines())
+wrprompit = list(filter(None, wrprompit_f.readlines()))
 
 @bot.event
 async def on_ready():
