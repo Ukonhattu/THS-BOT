@@ -7,7 +7,7 @@ bot = commands.Bot(command_prefix='?', description=description)
 replat_f = open("randot/replat.txt", "r")
 replat = replat_f.readlines()
 wrprompit_f = open("randot/wrpromt.txt", "r")
-wrprompit = wrprompit_f.readlines()
+wrprompit = list(filter(None, wrprompit_f.readlines())
 
 @bot.event
 async def on_ready():
@@ -66,10 +66,8 @@ async def repla():
 
 @bot.command()
 async def prompt():
-    while True:
-        a = wrprompit[random.randint(0, len(wrprompit)-1)]
-        if a is not "":
-            break
+    a = wrprompit[random.randint(0, len(wrprompit)-1)]
+
     await bot.say(a)
 
 bot.run('NDkwMjE4NzYwMzY4ODE2MTMw.Dn2Y_A.a6iq0M5Du9N9jWn_ILvl8B6_tVs')
