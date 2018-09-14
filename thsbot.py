@@ -6,6 +6,8 @@ description = '''An example bot to showcase the discord.ext.commands extension
 module.
 There are a number of utility commands being showcased here.'''
 bot = commands.Bot(command_prefix='?', description=description)
+replat_f = open("replat.txt", "r")
+replat = replat_f.readlines()
 
 @bot.event
 async def on_ready():
@@ -36,11 +38,7 @@ async def choose(*choices : str):
     """Chooses between multiple choices."""
     await bot.say(random.choice(choices))
 
-@bot.command()
-async def repeat(times : int, content='repeating...'):
-    """Repeats a message multiple times."""
-    for i in range(times):
-        await bot.say(content)
+
 
 @bot.command()
 async def joined(member : discord.Member):
@@ -59,5 +57,10 @@ async def cool(ctx):
 async def _bot():
     """Is the bot cool?"""
     await bot.say('Yes, the bot is cool.')
+
+#############THS OMAT KOMENNOT ALKAA TÄSTÄ###############
+@bot.command()
+async def repla():
+    await bot.say(replat[random.randint(0,len(replat)-1)])
 
 bot.run('NDkwMjE4NzYwMzY4ODE2MTMw.Dn2Y_A.a6iq0M5Du9N9jWn_ILvl8B6_tVs')
