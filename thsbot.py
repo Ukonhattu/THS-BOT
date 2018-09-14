@@ -67,7 +67,7 @@ async def repla():
 @bot.command()
 async def prompt():
     while True:
-        a = wrprompit[random.randint(0, len(wrprompit)-1]
+        a = wrprompit[random.randint(0, len(wrprompit)-1)]
         if a:
             break
     bot.say(a)
