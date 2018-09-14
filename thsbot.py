@@ -4,8 +4,10 @@ import random
 
 description = '''The Hopeless Situation - Discord bot for everything'''
 bot = commands.Bot(command_prefix='?', description=description)
-replat_f = open("replat.txt", "r")
+replat_f = open("randot/replat.txt", "r")
 replat = replat_f.readlines()
+wrprompit_f = open("randot/wrpromt.txt", "r")
+wrprompit = wrprompit_f.readlines()
 
 @bot.event
 async def on_ready():
@@ -57,8 +59,17 @@ async def _bot():
     await bot.say('Yes, the bot is cool.')
 
 #############THS OMAT KOMENNOT ALKAA TÄSTÄ###############
+
 @bot.command()
 async def repla():
     await bot.say(replat[random.randint(0,len(replat)-1)])
+
+@bot.command()
+async def prompt():
+    while True:
+        a = wrprompit[random.randint(0, len(wrprompit)-1]
+        if a:
+            break
+    bot.say(a)
 
 bot.run('NDkwMjE4NzYwMzY4ODE2MTMw.Dn2Y_A.a6iq0M5Du9N9jWn_ILvl8B6_tVs')
