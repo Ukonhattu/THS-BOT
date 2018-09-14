@@ -68,10 +68,8 @@ async def repla():
 async def prompt():
     while True:
         a = wrprompit[random.randint(0, len(wrprompit)-1)]
-        if not a:
-            pass
-        else:
+        if a:
             break
-    bot.say(a)
+    await bot.say(a)
 
 bot.run('NDkwMjE4NzYwMzY4ODE2MTMw.Dn2Y_A.a6iq0M5Du9N9jWn_ILvl8B6_tVs')
