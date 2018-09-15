@@ -11,7 +11,7 @@ wrprompit = list(filter(None, wrprompit_f.readlines()))
 token_f = open("authtoken.txt", "r")
 token = token_f.read()
 
-client = discord.client()
+client = discord.Client()
 
 @bot.event
 async def on_ready():
