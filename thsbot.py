@@ -19,8 +19,10 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    channel = client.get_channel(490212509962338307)
-    await client.send_message(channel, "Olen palannut entistä parempana! (Minut on päivitetty)")
+    
+    
+    for server in client.servers:
+        await client.send_message(server.default_channel, "Olen palannut entistä parempana! (Minut on päivitetty)")
 
 @bot.command()
 async def add(left : int, right : int):
