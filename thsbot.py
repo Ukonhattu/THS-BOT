@@ -93,10 +93,14 @@ async def prompt():
 
 
 @bot.command()
-async def gif(tag : str):
+async def gif(rtag : str):
     try:
-        api_response = api_instance.gifs_random_get(api_key, tag=tag)  
-        await bot.say(api_response.data.image_url)
+        api_response = api_instance.gifs_random_get(api_key, tag=rtag)
+        gif = api_response.data.image_url
+        if not gif:
+            await bot.say("haulla %s ei löyty gifiä" % rtag)
+            return  
+        await bot.say(gif)
     except ApiException as e:
         print("Exception when calling DefaultApi->gifs_random_get: %s\n" % e)
 
