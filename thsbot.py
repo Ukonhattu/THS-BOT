@@ -21,7 +21,7 @@ async def on_ready():
     print('------')
     
     
-    for server in client.servers:
+    for server in bot.servers:
         await client.send_message(server.default_channel, "Olen palannut entistä parempana! (Minut on päivitetty)")
 
 @bot.command()
