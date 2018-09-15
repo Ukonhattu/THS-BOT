@@ -90,8 +90,6 @@ async def prompt():
     await bot.say(a)
 
 
-
-
 @bot.command()
 async def gif(rtag : str):
     try:
