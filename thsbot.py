@@ -11,7 +11,6 @@ wrprompit = list(filter(None, wrprompit_f.readlines()))
 token_f = open("authtoken.txt", "r")
 token = token_f.read()
 
-client = discord.Client()
 
 @bot.event
 async def on_ready():
@@ -22,7 +21,7 @@ async def on_ready():
     
     
     for server in bot.servers:
-        await client.send_message(server.default_channel, "Olen palannut entistä parempana! (Minut on päivitetty)")
+        await bot.send_message(server, "Olen palannut entistä parempana! (Minut on päivitetty)")
 
 @bot.command()
 async def add(left : int, right : int):
