@@ -21,7 +21,9 @@ async def on_ready():
     
     
     for server in bot.servers:
-        await bot.send_message(server, "Olen palannut entistä parempana! (Minut on päivitetty)")
+        for channel in server.channels:
+            await bot.send_message(channel, "Olen palannut entistä parempana! (Minut on päivitetty)")
+            break
 
 @bot.command()
 async def add(left : int, right : int):
