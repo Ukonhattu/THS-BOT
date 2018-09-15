@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import random
+import os
 
 description = '''The Hopeless Situation - Discord bot for everything'''
 bot = commands.Bot(command_prefix='?', description=description)
