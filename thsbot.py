@@ -17,7 +17,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.say("Olen palannut entistä parempana! (Minut on päivitetty)")
+    await bot.say("Olen palannut entistä parempana! (Minut on päivitetty)", 490212509962338307)
 
 @bot.command()
 async def add(left : int, right : int):
