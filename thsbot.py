@@ -8,8 +8,7 @@ replat_f = open("randot/replat.txt", "r")
 replat = replat_f.readlines()
 wrprompit_f = open("randot/wrpromt.txt", "r")
 wrprompit = list(filter(None, wrprompit_f.readlines()))
-token_f = open("authtoken.txt", "r")
-token = token_f.read()
+token = os.environ['BOT_TOKEN']
 
 
 @bot.event
