@@ -4,6 +4,7 @@ import random
 import os
 import giphy_client
 from giphy_client.rest import ApiException
+import json
 
 description = '''The Hopeless Situation - Discord bot for everything'''
 bot = commands.Bot(command_prefix='?', description=description)
@@ -95,7 +96,8 @@ async def prompt():
 async def gif(tag : str):
     try:
         api_response = api_instance.gifs_random_get(api_key, tag=tag)
-        await bot.say(api_response)
+        gison = json.load(api_response)
+        await bot.say(gifson["data"]["image_url"])
     except ApiException as e:
         print("Exception when calling DefaultApi->gifs_random_get: %s\n" % e)
 
