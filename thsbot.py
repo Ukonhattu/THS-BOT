@@ -96,8 +96,7 @@ async def prompt():
 async def gif(tag : str):
     try:
         api_response = api_instance.gifs_random_get(api_key, tag=tag)
-        with open(api_response) as ar:
-            response = json.load(ar)    
+        response = json.loads(api_response)    
         await bot.say(response['data']['image_url'])
     except ApiException as e:
         print("Exception when calling DefaultApi->gifs_random_get: %s\n" % e)
