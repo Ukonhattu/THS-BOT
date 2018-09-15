@@ -9,7 +9,7 @@ replat = replat_f.readlines()
 wrprompit_f = open("randot/wrpromt.txt", "r")
 wrprompit = list(filter(None, wrprompit_f.readlines()))
 token_f = open("authtoken.txt", "r")
-token = authtoken.read()
+token = token_f.read()
 
 @bot.event
 async def on_ready():
