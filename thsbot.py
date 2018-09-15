@@ -92,7 +92,7 @@ async def prompt():
 
 
 @bot.command()
-async def giphy(tag : str):
+async def gif(tag : str):
     try:
         api_response = api_instance.gifs_random_get(api_key, tag=tag)
         await bot.say(api_response)
