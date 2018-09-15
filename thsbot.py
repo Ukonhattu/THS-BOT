@@ -8,6 +8,8 @@ replat_f = open("randot/replat.txt", "r")
 replat = replat_f.readlines()
 wrprompit_f = open("randot/wrpromt.txt", "r")
 wrprompit = list(filter(None, wrprompit_f.readlines()))
+token_f = open("authtoken.txt", "r")
+token = authtoken.read()
 
 @bot.event
 async def on_ready():
@@ -70,4 +72,4 @@ async def prompt():
 
     await bot.say(a)
 
-bot.run('NDkwMjE4NzYwMzY4ODE2MTMw.Dn2Y_A.a6iq0M5Du9N9jWn_ILvl8B6_tVs')
+bot.run(token)
