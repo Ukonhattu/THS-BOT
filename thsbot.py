@@ -11,13 +11,15 @@ wrprompit = list(filter(None, wrprompit_f.readlines()))
 token_f = open("authtoken.txt", "r")
 token = token_f.read()
 
+client = discord.client()
+
 @bot.event
 async def on_ready():
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.say("Olen palannut entistä parempana! (Minut on päivitetty)", 490212509962338307)
+    await client.send_message(490212509962338307, "Olen palannut entistä parempana! (Minut on päivitetty)")
 
 @bot.command()
 async def add(left : int, right : int):
