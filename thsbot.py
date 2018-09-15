@@ -17,7 +17,7 @@ token = os.environ['BOT_TOKEN']
 ##Giphy config######
 ####################
 api_instance = giphy_client.DefaultApi()
-api_key = "Q65dIGOFbRt8Srdr7axFcJYKhvpoJ4gS"
+api_key = os.environ['GIPHY_TOKEN']
 #######################################
 
 
