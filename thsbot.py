@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 import random
 import os
+import giphy_client
+from giphy_client.rest import ApiException
 
 description = '''The Hopeless Situation - Discord bot for everything'''
 bot = commands.Bot(command_prefix='?', description=description)
@@ -10,6 +12,12 @@ replat = replat_f.readlines()
 wrprompit_f = open("randot/wrpromt.txt", "r")
 wrprompit = list(filter(None, wrprompit_f.readlines()))
 token = os.environ['BOT_TOKEN']
+####################
+##Giphy config######
+####################
+api_instance = giphy_client.DefaultApi()
+api_key = "Q65dIGOFbRt8Srdr7axFcJYKhvpoJ4gS"
+#######################################
 
 
 @bot.event
@@ -79,5 +87,17 @@ async def prompt():
     a = wrprompit[random.randint(0, len(wrprompit)-1)]
 
     await bot.say(a)
+
+
+
+
+@bot.command()
+async def giphy(tag : str):
+    try:
+        api_response = api_instance.gifs_random_get(api_key, tag=tag)
+        await bot.say(api_response)
+    except ApiException as e:
+        print("Exception when calling DefaultApi->gifs_random_get: %s\n" % e)
+
 
 bot.run(token)
