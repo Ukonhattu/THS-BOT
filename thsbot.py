@@ -91,7 +91,7 @@ async def prompt():
 
 
 @bot.command()
-async def gif(rtag : str):
+async def gif(rtag):
     try:
         api_response = api_instance.gifs_random_get(api_key, tag=rtag)
         gif = api_response.data.image_url
