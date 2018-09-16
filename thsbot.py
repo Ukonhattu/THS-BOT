@@ -98,7 +98,8 @@ async def gif(rtag : str):
         if not gif:
             await bot.say("haulla %s ei löyty gifiä" % rtag)
             return
-        embed = discord.Embed(url=gif)  
+        embed = discord.Embed()
+        embed.set_image(gif)  
         await bot.say(embed=embed)
     except ApiException as e:
         print("Exception when calling DefaultApi->gifs_random_get: %s\n" % e)
