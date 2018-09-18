@@ -107,16 +107,14 @@ async def gif(rtag):
 
 @bot.command()
 async def komennot():
-    commands = """Komennot:\n
-                ?komennot: Kaikki komennot\n
-                ?repla : Random repla THS elokuvista\n
-                ?gif <tag>: Random gif, haettu tägin perusteella. Laita usean sanan tägit lainausmerkkeihin
-                 Esim. ?gif \"Funny cat\"\n
-                ?promt : Random kirjoitusprompti\n
-                ?choose <asia> <toinen asia>: Valitsee yhden annetuista asioista. Asioita voi antaa mielivaltaisen määrän.
-                 Laita useamman sanan asiat lainausmerkkeihin.\n
-                ?roll <noppien määrä>d<sivujen määrä>: antaa joukon random lukuja. Esim ?roll 4d20\n
-                ?add <luku1> <luku2>: Laskee kaksi lukua yhteen. Vitun turha komento. Nauttikaa."""
+    commands = """Komennot:
+?komennot: Kaikki komennot
+?repla : Random repla THS elokuvista
+?gif <tag>: Random gif, haettu tägin perusteella. Laita usean sanan tägit lainausmerkkeihin. Esim. ?gif \"Funny cat\"
+?promt : Random kirjoitusprompti
+?choose <asia> <toinen asia>: Valitsee yhden annetuista asioista. Asioita voi antaa mielivaltaisen määrän. Laita useamman sanan asiat lainausmerkkeihin.
+?roll <noppien määrä>d<sivujen määrä>: antaa joukon random lukuja. Esim ?roll 4d20
+?add <luku1> <luku2>: Laskee kaksi lukua yhteen. Vitun turha komento. Nauttikaa."""
     await bot.say(commands)
 
 
