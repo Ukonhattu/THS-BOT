@@ -108,7 +108,7 @@ async def gif(rtag):
 @bot.command()
 async def komennot():
     commands = """Komennot:\n
-                ?Komennot: Kaikki komennot\n
+                ?komennot: Kaikki komennot\n
                 ?repla : Random repla THS elokuvista\n
                 ?gif <tag>: Random gif, haettu tägin perusteella. Laita usean sanan tägit lainausmerkkeihin
                  Esim. ?gif \"Funny cat\"\n
@@ -117,7 +117,7 @@ async def komennot():
                  Laita useamman sanan asiat lainausmerkkeihin.\n
                 ?roll <noppien määrä>d<sivujen määrä>: antaa joukon random lukuja. Esim ?roll 4d20\n
                 ?add <luku1> <luku2>: Laskee kaksi lukua yhteen. Vitun turha komento. Nauttikaa."""
-    bot.say(commands)
+    await bot.say(commands)
 
 
 
