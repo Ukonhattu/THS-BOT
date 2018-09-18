@@ -105,5 +105,19 @@ async def gif(rtag):
     except ApiException as e:
         print("Exception when calling DefaultApi->gifs_random_get: %s\n" % e)
 
+@bot.command()
+async def commands():
+    commands = "Komennot:\n" +
+                "?repla : Random repla THS elokuvista\n" +
+                "?gif <tag>: Random gif, haettu tägin perusteella. Laita usean sanan tägit lainausmerkkeihin" +
+                    " Esim. ?gif \"Funny cat\"\n" +
+                "?promt : Random kirjoitusprompti\n" +
+                "?choose <asia> <toinen asia>: Valitsee yhden annetuista asioista. Asioita voi antaa mielivaltaisen määrän." +
+                " Laita useamman sanan asiat lainausmerkkeihin.\n" +
+                "?roll <noppien määrä>d<sivujen määrä>: antaa joukon random lukuja. Esim ?roll 4d20" +
+                "?add <luku1> <luku2>: Laskee kaksi lukua yhteen. Vitun turha komento. Nauttikaa."
+    bot.say(commands)
+
+
 
 bot.run(token)
