@@ -119,7 +119,8 @@ async def komennot():
 ?promt : Random kirjoitusprompti
 ?choose <asia> <toinen asia>: Valitsee yhden annetuista asioista. Asioita voi antaa mielivaltaisen määrän. Laita useamman sanan asiat lainausmerkkeihin.
 ?roll <noppien määrä>d<sivujen määrä>: antaa joukon random lukuja. Esim ?roll 4d20
-?add <luku1> <luku2>: Laskee kaksi lukua yhteen. Vitun turha komento. Nauttikaa."""
+?add <luku1> <luku2>: Laskee kaksi lukua yhteen. Vitun turha komento. Nauttikaa.
+?wa <haku> : WolframAlpha. Laita usean sanan haut lainausmerkkeihin. Laskee mitä vain, vastaa mihin vain (ainakin melkein)"""
     await bot.say(commands)
 
 @bot.command()
