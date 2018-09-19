@@ -5,6 +5,9 @@ import os
 import giphy_client
 from giphy_client.rest import ApiException
 import json
+import wolframalpha
+
+
 
 description = '''The Hopeless Situation - Discord bot for everything'''
 bot = commands.Bot(command_prefix='?', description=description)
@@ -19,7 +22,9 @@ token = os.environ['BOT_TOKEN']
 api_instance = giphy_client.DefaultApi()
 api_key = os.environ['GIPHY_TOKEN']
 #######################################
-
+########Wolfram ALPHA
+wa_client = wolframalpha.Client(os.environ['WOLFRAM_TOKEN'])
+#######################################
 
 @bot.event
 async def on_ready():
@@ -116,6 +121,11 @@ async def komennot():
 ?roll <noppien määrä>d<sivujen määrä>: antaa joukon random lukuja. Esim ?roll 4d20
 ?add <luku1> <luku2>: Laskee kaksi lukua yhteen. Vitun turha komento. Nauttikaa."""
     await bot.say(commands)
+
+@bot.command()
+async def wa(params):
+    res = wa_client.query(params)
+    await bot.say(next(res.results).text)
 
 
 
