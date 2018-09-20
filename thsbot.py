@@ -6,6 +6,9 @@ import giphy_client
 from giphy_client.rest import ApiException
 import json
 import wolframalpha
+from googletrans import Translator
+
+translator = Translator()
 
 
 
@@ -127,6 +130,11 @@ async def komennot():
 async def wa(params):
     res = wa_client.query(params)
     await bot.say(next(res.results).text)
+
+@bot.command()
+async def translate(text, source='en', target='fi'):
+    translation = translator.translate(text, dest=target, src=source)
+    await bot.say(translation.text)
 
 
 
