@@ -134,8 +134,7 @@ async def walong(params):
     mes = ""
     for p in res.pods:
         for s in p.subpods:
-            mes += s.text
-        mes += "\n"
+            " ".join(mes, s.text)
     await bot.say(mes)
 
 
