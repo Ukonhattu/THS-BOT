@@ -128,14 +128,6 @@ async def wa(params):
     res = wa_client.query(params)
     await bot.say(next(res.results).text)
 
-@bot.command()
-async def walong(params):
-    res = wa_client.query(params)
-    mes = ""
-    for p in res.pods:
-        for s in p.subpods:
-            " ".join(mes, s.text)
-    await bot.say(mes)
 
 
 
