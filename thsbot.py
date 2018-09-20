@@ -129,7 +129,7 @@ async def komennot():
 @bot.command()
 async def wa(params):
     res = wa_client.query(params)
-    await bot.say(res)
+    await bot.say(next(res.subpods).text)
 
 @bot.command()
 async def translate(text, source='tunnista', target='fi'):
