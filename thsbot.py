@@ -133,7 +133,7 @@ async def walong(params):
     res = wa_client.query(params)
     mes = ""
     for p in res.pods:
-        for s in pod.subpods:
+        for s in p.subpods:
             s += s.text
         s += "\n"
     await bot.say(mes)
