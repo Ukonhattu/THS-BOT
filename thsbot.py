@@ -128,6 +128,11 @@ async def wa(params):
     res = wa_client.query(params)
     await bot.say(next(res.results).text)
 
+@bot.command()
+async def walong(params):
+    res = wa_client.query(params)
+    await bot.say(next(res).text)
+
 
 
 bot.run(token)
