@@ -131,7 +131,12 @@ async def wa(params):
 @bot.command()
 async def walong(params):
     res = wa_client.query(params)
-    await bot.say(next(res.pods).text)
+    mes = ""
+    for p in res.pods:
+        for s in pod.subpods:
+            s += s.text
+        s += "\n"
+    await bot.say(mes)
 
 
 
