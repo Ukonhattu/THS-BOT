@@ -132,7 +132,7 @@ async def wa(params):
     await bot.say(next(res.results).text)
 
 @bot.command()
-async def translate(text, source='en', target='fi'):
+async def translate(text, source='tunnista', target='fi'):
     if source == "tunnista":
         translation = translator.translate(text, dest=target)
     else:
