@@ -131,7 +131,7 @@ async def wa(params):
 @bot.command()
 async def walong(params):
     res = wa_client.query(params)
-    await bot.say(next(res).text)
+    await bot.say(next(res.pods).text)
 
 
 
