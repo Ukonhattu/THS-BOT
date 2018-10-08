@@ -36,12 +36,6 @@ async def on_ready():
     print(bot.user.id)
     print('------')
     
-    
-    for server in bot.servers:
-        for channel in server.channels:
-            if str(channel) == "general":
-                await bot.send_message(channel, "Olen palannut entistä parempana! (Minut on päivitetty)")
-                break
 
 @bot.command()
 async def add(left : int, right : int):
